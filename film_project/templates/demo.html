@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+hello world
+<br>
+{% for i in data %}
+    <br>
+    <a href="{% url 'get_film' i.id %}">{{i.name}}</a>
+{% endfor %}
+helloo
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+helloonbhjhdh
+{% for i in data %}
+    <br>
+    <h2>{{i.name}}</h2>
+    <h2>{{i.director}}</h2>
+    <h2>{{i.cast}}</h2>
+{% endfor %}
+<form action="post/" method="POST">
+    {% csrf_token %}
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    <label for="description">Description:</label>
+    <input type="text" id="description" name="description" required>
+    <label for="director">Director:</label>
+    <input type="text" id="director" name="director" required>
+    <label for="cast">Cast:</label>
+    <input type="text" id="cast" name="cast" required>
+    <button type="submit">Submit</button>
+</form>
+<button type="button" onclick="myFunction()">Click here</button>
+<script>
+fetch("http://127.0.0.1:8000/films/3")
+  .then(response => response.json())
+  .then(data => {
+    // do something with the data
+    console.log(data.name); // prints the name of the film
+    console.log(data.description); // prints the description of the film
+    console.log(data.director); // prints the director of the film
+    console.log(data.cast); // prints the cast of the film
+  })
+  .catch(error => {
+    // handle errors
+    console.error(error);
+  });
+
+</script>
+</body>
+</html>
